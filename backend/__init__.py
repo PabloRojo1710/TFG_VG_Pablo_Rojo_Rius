@@ -1,5 +1,6 @@
 from flask import Flask
 from database import init_db
+from flask_jwt_extended import JWTManager
 app = Flask(__name__)
 
 def ini_app(configuration):
@@ -18,4 +19,5 @@ def ini_app(configuration):
         app.register_blueprint(auth)
 
         init_db(app)
+        jwt = JWTManager(app)
         return app
