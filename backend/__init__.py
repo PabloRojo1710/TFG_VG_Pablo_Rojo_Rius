@@ -1,11 +1,13 @@
 from flask import Flask
 from database import init_db
 from flask_jwt_extended import JWTManager
+from flask_cors import CORS
 app = Flask(__name__)
 
 def ini_app(configuration):
     app.config.from_object(configuration)
     with app.app_context():
+        CORS(app)
         from routers.engine_api import engine_api 
         app.register_blueprint(engine_api, url_prefix='/engine')
 

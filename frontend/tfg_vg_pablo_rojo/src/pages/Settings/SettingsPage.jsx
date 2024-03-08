@@ -1,11 +1,10 @@
 import React from 'react';
-import Navbar from '../../components/Navbar';
 
-const SettingsPage = () => {
+const SettingsPage = ({ navWidth }) => {
+  console.log(navWidth)
     return (
-      <div style={{ width: '75%', height: '100%;' }}>
-        <Navbar/>
-       <h1>SETTINGS PAGE</h1>
+      <div style={{ marginLeft: navWidth , padding: '64px', height: '100%', transition: 'all 1s ease'}}>
+       <h1 style={{backgroundColor: 'red'}}>SETTINGS PAGE</h1>
       </div>
     );
   };

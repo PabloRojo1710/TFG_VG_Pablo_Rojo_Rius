@@ -1,21 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import Login from './pages/Login/login';
 import Home from './pages/Home/Home';
-import TablesPage from './pages/Tables/TablesPage';
-import PlayersPage from './pages/Players/PlayersPage';
-import SettingsPage from './pages/Settings/SettingsPage'; 
+import SignUp from './pages/SignUp/signup';
+import Logout from './pages/Logout/logout';
 
 function App() {
   return (
     <div className="App">
        <Routes>
         <Route path="/login" element={<Login />} />
-        <Route path="/" element={<Home />} />
-        <Route path="/tables" element={<TablesPage />} />
-        <Route path="/players" element={<PlayersPage />} />
-        <Route path="/settings" element={<SettingsPage />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/logout" element={<Logout />} />
+        <Route path="/" element={<Home page="home" />} />
+        <Route path="/tables" element={<Home page="tables" />} />
+        <Route path="/players" element={<Home page="players" />} />
+        <Route path="/settings" element={<Home page="settings" />} />
       </Routes>
     </div>
   );

@@ -1,16 +1,26 @@
 import React, { useState } from 'react';
-import './login.css';
+import './signup.css';
 import { useNavigate } from 'react-router-dom';
 
-function Login() {
+function SignUp() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [name, setName] = useState('');
+  const [surname, setSurname] = useState('');
+  const [enterprise, setEnterprise] = useState('');
+
+
   const navigate = useNavigate();
+
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData();
     formData.append('email', email);
     formData.append('password', password);
+    formData.append('name', name);
+    formData.append('surname', surname);
+    formData.append('enterprise', enterprise);
 
     // Opciones de la solicitud fetch sin 'Content-Type' en los headers
     const requestOptions = {
@@ -20,17 +30,17 @@ function Login() {
     };
 
     try {
-      const response = await fetch('http://localhost:5000/login', requestOptions);
+      const response = await fetch('http://localhost:5000/register', requestOptions);
       if (response.ok) {
         const data = await response.json();
-        console.log('Login successful', data);
+        console.log('Register successful', data);
         // Aquí puedes manejar la respuesta, como redireccionar al usuario o guardar el token de sesión
-        navigate("/");
+        navigate("/login");
       } else {
-        console.error('Login failed');
+        console.error('Register failed');
       }
     } catch (error) {
-      console.error('Error sending login data', error);
+      console.error('Error sending register data', error);
     }
   };
 
@@ -57,14 +67,41 @@ function Login() {
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          <button type="submit">Login</button>
+          <div className="input-group">
+            <label htmlFor="name">Name</label>
+            <input
+              type="text"
+              id="name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+          </div>
+          <div className="input-group">
+            <label htmlFor="surname">Surname</label>
+            <input
+              type="text"
+              id="surname"
+              value={surname}
+              onChange={(e) => setSurname(e.target.value)}
+            />
+          </div>
+          <div className="input-group">
+            <label htmlFor="password">Enterprise Name</label>
+            <input
+              type="text"
+              id="enterprise"
+              value={enterprise}
+              onChange={(e) => setEnterprise(e.target.value)}
+            />
+          </div>
+          <button type="submit">SignUp</button>
         </form>
         <p>
-          Don't have an account? <a href="/signup">Sign up</a>
+          Already have an account? <a href="/login">Login</a>
         </p>
       </div>
     </div>
   );
 }
 
-export default Login;
+export default SignUp;
