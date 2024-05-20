@@ -14,7 +14,7 @@ class Config(object):
     JWT_COOKIE_SAMESITE = None
     JWT_SESSION_COOKIE = False
     CORS_SUPPORTS_CREDENTIALS = True
-    #CORS_EXPOSE_HEADERS = 'Set-Cookie'
+    CORS_EXPOSE_HEADERS = 'Set-Cookie'
     JWT_COOKIE_CSRF_PROTECT = False
 
 class DevConfig(Config):

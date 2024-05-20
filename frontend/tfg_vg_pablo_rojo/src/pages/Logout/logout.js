@@ -1,6 +1,5 @@
 import React, { useEffect} from 'react';
 import { useNavigate } from 'react-router-dom';
-
 function Logout() {
     const navigate = useNavigate();
     useEffect(() =>{
@@ -14,7 +13,7 @@ function Logout() {
                 if (response.ok) {
                 const data = await response.json();
                 console.log('Logout successful', data);
-                // Aquí puedes manejar la respuesta, como redireccionar al usuario o guardar el token de sesión
+                //Cookies.remove('user');
                 navigate("/");
                 } else {
                 console.error('Logout failed');

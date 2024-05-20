@@ -1,5 +1,6 @@
 from flask import Blueprint, jsonify
 from database import get_db
+
 admin_api = Blueprint('admin_api', __name__)
 
 @admin_api.route('/get-all-admin', methods=['GET'])
@@ -17,3 +18,4 @@ def add_new_object():
     print(db)
     db.get_collection('config').insert_one({"name": "test"})
     return jsonify('OK'), 200
+

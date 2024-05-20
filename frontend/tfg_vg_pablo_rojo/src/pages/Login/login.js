@@ -12,11 +12,11 @@ function Login() {
     formData.append('email', email);
     formData.append('password', password);
 
-    // Opciones de la solicitud fetch sin 'Content-Type' en los headers
     const requestOptions = {
       method: 'POST',
       body: formData, 
-      credentials: 'include'
+      credentials: 'include',
+      cache: 'no-store'
     };
 
     try {
@@ -24,7 +24,6 @@ function Login() {
       if (response.ok) {
         const data = await response.json();
         console.log('Login successful', data);
-        // Aquí puedes manejar la respuesta, como redireccionar al usuario o guardar el token de sesión
         navigate("/");
       } else {
         console.error('Login failed');
@@ -39,25 +38,25 @@ function Login() {
       <div className="login-container">
         <h1>Login</h1>
         <form onSubmit={handleSubmit}>
-          <div className="input-group">
+          <div className="input-group" style={{marginRight: "1rem"}}>
             <label htmlFor="email">Email</label>
-            <input
+            <input className="custom-input"
               type="text"
               id="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
-          <div className="input-group">
+          <div className="input-group" style={{marginRight: "1rem"}}>
             <label htmlFor="password">Password</label>
-            <input
+            <input className="custom-input"
               type="password"
               id="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          <button type="submit">Login</button>
+          <button className="custom-btn" type="submit">Login</button>
         </form>
         <p>
           Don't have an account? <a href="/signup">Sign up</a>

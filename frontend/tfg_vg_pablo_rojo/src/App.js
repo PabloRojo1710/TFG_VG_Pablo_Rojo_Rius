@@ -16,6 +16,7 @@ function App() {
         <Route path="/tables" element={<Home page="tables" />} />
         <Route path="/players" element={<Home page="players" />} />
         <Route path="/settings" element={<Home page="settings" />} />
+        <Route path="/logs" element={<Home page="logs" />} />
       </Routes>
     </div>
   );

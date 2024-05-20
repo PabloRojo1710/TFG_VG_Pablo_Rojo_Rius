@@ -49,52 +49,52 @@ function SignUp() {
       <div className="login-container">
         <h1>Login</h1>
         <form onSubmit={handleSubmit}>
-          <div className="input-group">
+          <div className="input-group" style={{marginRight: "1rem"}}>
             <label htmlFor="email">Email</label>
-            <input
+            <input className="custom-input"
               type="text"
               id="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
-          <div className="input-group">
+          <div className="input-group" style={{marginRight: "1rem"}}>
             <label htmlFor="password">Password</label>
-            <input
+            <input className="custom-input"
               type="password"
               id="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          <div className="input-group">
+          <div className="input-group" style={{marginRight: "1rem"}}>
             <label htmlFor="name">Name</label>
-            <input
+            <input className="custom-input"
               type="text"
               id="name"
               value={name}
               onChange={(e) => setName(e.target.value)}
             />
           </div>
-          <div className="input-group">
+          <div className="input-group" style={{marginRight: "1rem"}}>
             <label htmlFor="surname">Surname</label>
-            <input
+            <input className="custom-input"
               type="text"
               id="surname"
               value={surname}
               onChange={(e) => setSurname(e.target.value)}
             />
           </div>
-          <div className="input-group">
+          <div className="input-group" style={{marginRight: "1rem"}}>
             <label htmlFor="password">Enterprise Name</label>
-            <input
+            <input className="custom-input"
               type="text"
               id="enterprise"
               value={enterprise}
               onChange={(e) => setEnterprise(e.target.value)}
             />
           </div>
-          <button type="submit">SignUp</button>
+          <button className="custom-btn" type="submit">SignUp</button>
         </form>
         <p>
           Already have an account? <a href="/login">Login</a>

@@ -1,5 +1,6 @@
 from flask import Blueprint, jsonify, request
 from database import get_db
+import uuid
 from flask_jwt_extended import create_access_token, set_access_cookies, unset_jwt_cookies
 from werkzeug.security import generate_password_hash, check_password_hash
 
@@ -17,10 +18,17 @@ def register():
         return jsonify({"msg": "All fields are required"}), 400
     
     hashed_password = generate_password_hash(password)
+    account_id = uuid.uuid4()
+    database_id = uuid.uuid4()
 
     db = get_db('master_db')
-    db.user.insert_one({'email': email, 'password': hashed_password, 'name': name, 'surname': surname, 'enterprise': enterprise})
+    db.user.insert_one({'email': email, 'password': hashed_password, 'name': name, 'surname': surname, 'enterprise': enterprise, "account": str(account_id)})
+    db.account.insert_one({"uuid": str(account_id), "user_email": email, "database": str(database_id)})
     
+    #Inicialización de la DB de la cuenta
+    db = get_db(str(database_id))
+    db.default.insert_one({"default": "default"})
+
     return jsonify({"msg": "User registered successfully"}), 201
 
 @auth.route('/login', methods=['POST'])

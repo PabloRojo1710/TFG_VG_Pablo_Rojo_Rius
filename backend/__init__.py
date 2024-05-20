@@ -7,7 +7,7 @@ app = Flask(__name__)
 def ini_app(configuration):
     app.config.from_object(configuration)
     with app.app_context():
-        CORS(app)
+        CORS(app, supports_credentials=True,)
         from routers.engine_api import engine_api 
         app.register_blueprint(engine_api, url_prefix='/engine')
 

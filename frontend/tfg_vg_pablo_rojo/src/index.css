@@ -11,3 +11,151 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+a {
+  text-decoration: none;
+  color: inherit;
+}
+/* Agrega esto en tu archivo CSS */
+.table-container {
+  background-color: #fff;
+  padding: 16px;
+  margin-left: 240px; /* Ajusta este valor según el ancho de tu barra lateral */
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+}
+
+.table thead {
+  background-color: #f3f3f3;
+}
+
+.table th,
+.table td {
+  text-align: left;
+  padding: 12px 8px;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.table th {
+  font-weight: 500;
+}
+
+.search-input {
+  padding: 8px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Ajusta los estilos de los botones y las acciones como prefieras */
+.action-buttons {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 4px 8px;
+}
+.page-main{
+  display: flex;
+  flex-direction: column;
+  padding: 4rem;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 48px;
+  transition: all 1s ease;
+  width: 100%;
+}
+
+.home-page-card {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid #d9d9d9;
+  /*min-height: 15rem;
+  max-height: 18rem;*/
+  transition: all 1s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-bottom: 12px;
+  
+}
+
+.home-page-card:hover{
+  border-radius: 0px;
+  box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15), 0px 1px 2px 0px rgba(0, 0, 0, 0.3);;
+}
+
+.home-page-card > img{
+  width: 100%;
+  height: auto;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  transition: all 1s ease;
+}
+
+.home-page-card:hover > img{
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+.home-page-card > section{
+  width: 100%;
+  display: flex;
+  gap: 6px;
+  flex-direction: column;
+}
+.home-page-card-container{
+  display: grid;
+  gap: 36px;
+  grid-template-columns: repeat(2, 1fr);
+  width: 66%;
+}
+
+.log-item-container{
+  display: flex;
+  min-width: 50%;
+  gap: 12px;
+  padding: 12px;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 12px;
+  border: 1px solid #d9d9d9;
+  transition: all 1s ease;
+}
+
+
+.log-item-initials-div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  border-radius: 50%;
+  border: 1px solid #9db2f7;
+}
+
+.custom-btn{
+  border-radius: 12px;
+  padding: 6px;
+  border: 1px solid #9db2f7;
+  background-color: white;
+  color: #9db2f7;
+}
+
+.custom-btn:hover{
+  border-radius: 12px;
+  padding: 6px;
+  border: 1px solid white;
+  background-color: #9db2f7;
+  color: white;
+}
+
+.custom-input{
+  border-radius: 12px;
+  padding: 6px;
+  border: 1px solid #9db2f7;
+  color: #9db2f7;
+}
