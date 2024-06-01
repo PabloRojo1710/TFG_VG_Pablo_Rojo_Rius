@@ -23,7 +23,6 @@ function Login() {
       const response = await fetch('http://localhost:5000/login', requestOptions);
       if (response.ok) {
         const data = await response.json();
-        console.log('Login successful', data);
         navigate("/");
       } else {
         console.error('Login failed');

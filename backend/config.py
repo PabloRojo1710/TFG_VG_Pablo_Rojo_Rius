@@ -7,7 +7,7 @@ class Config(object):
     TESTING = False
     SECRET_KEY = "Random String"
     JWT_SECRET_KEY = 'projo-jwt'
-    JWT_COOKIE_SECURE = False #Change True while in production
+    JWT_COOKIE_SECURE = False 
     JWT_TOKEN_LOCATION = ['cookies']
     JWT_ACCESS_TOKEN_EXPIRES = timedelta(days=15)
     JWT_COOKIE_HTTPONLY = False

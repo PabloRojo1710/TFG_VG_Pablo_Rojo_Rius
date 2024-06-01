@@ -4,17 +4,7 @@ import settings_img from "../../static/settings_img.webp";
 import tables_img from "../../static/tables_img.webp";
 
 const WelcomePage = ({navWidth }) => {
-  /*
-  <a href="/players">
-          <article className="home-page-card">
-            <img src={players_img} alt="players page"></img>
-            <section>
-              <h3 style={{ margin: 0 }}><strong>Players Page</strong></h3>
-              <h5 style={{ margin: 0 , fontWeight: "normal"}}>This will be the description</h5>
-            </section>
-          </article>
-        </a>
-  */
+
     return (
       <div className="page-main" style={{ marginLeft: navWidth }}>
        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '6px'}}>

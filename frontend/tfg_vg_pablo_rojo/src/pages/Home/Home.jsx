@@ -14,8 +14,7 @@ const Home = ({page}) => {
   console.log(Cookies.get('access_token_cookie'))
   useEffect(() => {
     if (!Cookies.get('access_token_cookie')) {
-      console.log("navigate")
-      //navigate("/login");
+      navigate("/login");
     }
   }, [navigate]);
 
@@ -24,9 +23,6 @@ const Home = ({page}) => {
     case 'tables':
       pageToRender = <TablesPage navWidth={ navWidth }/>
       break;
-    /*case 'players':
-      pageToRender = <PlayersPage navWidth={ navWidth }/>
-      break;*/
     case 'settings':
       pageToRender = <SettingsPage navWidth={ navWidth }/>
       break;

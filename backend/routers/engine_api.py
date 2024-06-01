@@ -62,7 +62,7 @@ def add_one_puntuation(collection):
     db = get_db('master_db')
     account_obj = db.user.find_one({"user_email": account["user_email"]})
     db = get_db(account_obj["database"])
-    #db = get_db("test_database")
+    
     object_to_insert = request.get_json()["object_to_insert"]
     player_name = request.get_json()["player_name"]
     
